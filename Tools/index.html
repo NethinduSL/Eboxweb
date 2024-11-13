@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E Box</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/NethinduSL/Ebox/refs/heads/main/Cards/logo3%3A4px.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="loader" id="loader"></div>
+    
+    <div class="navbar">
+        <div class="nav-links">
+            <p style="font-size:20px">
+                   <a href="/index.html"><i class="fa-solid fa-house"></i></a>
+  
+                <a href="Dashbord/index.html"><i class="fa-solid fa-layer-group"></i></a>
+                <a href="Projects/index.html"><i class="fa-solid fa-file"></i></a>
+                <a href="#useful"><i class="fa-solid fa-bars" onclick="toggleNav()"></i></a>
+            </p>
+        </div>
+        <p style="font-size:30px;font-weight:bold;">E Boxᴰᴮ Tools</p>
+        <h2 id="battery"></h2>
+        <button class="toggle-btn" id="themeToggle"><i class="fas fa-moon"></i></button>
+    </div>
+
+    <div id="sideNav" class="side-nav">
+        <h2><center><i class="fa-solid fa-fire"></i></center></h2>
+        <a href="javascript:void(0)" class="close-btn" onclick="toggleNav()">×</a>
+        <h2><a href="/index.html"><i class="fa-solid fa-house"></i> Home</a></h2>
+        <h2 onclick="scaleCardOverlay('card1')"><i class="fa-solid fa-paperclip"></i> About</h2>
+        <h2><a href="#"><i class="fa-solid fa-play"></i> Services</a></h2>
+        <h2 onclick="scaleCardOverlay('card2')"><i class="fa-solid fa-phone"></i> Contact</h2>
+    </div>
+
+  
+    <div class="hidden" id="contain1">
+        <div class="card rectangle" id="card1">
+            <div id="calculator-app">
+                <h1>Age Calculator</h1>
+                <label for="birthdate">Select Your Birth Date:</label>
+                <select class="dropbox" id="year"></select>
+                <select class="dropbox" id="month">
+                    <option value="0">January</option>
+                    <option value="1">February</option>
+                    <option value="2">March</option>
+                    <option value="3">April</option>
+                    <option value="4">May</option>
+                    <option value="5">June</option>
+                    <option value="6">July</option>
+                    <option value="7">August</option>
+                    <option value="8">September</option>
+                    <option value="9">October</option>
+                    <option value="10">November</option>
+                    <option value="11">December</option>
+                </select>
+                <select class="dropbox" id="day"></select>
+                <button id="calculate-btn" onclick="hide()">Calculate</button>
+                <div class="result" id="result"></div>
+                <div id="resu">
+                    Age:<br><br>
+                    Total Time:<br><br>
+                    Next Birthday:
+                </div>
+                <i class="fa-solid fa-maximize max" id="maxb1" onclick="scaleCardOverlay('card1')"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="hidden" id="contain2">
+        <div class="card rectangle" id="card2">
+            <div id="generator-container">
+                <h1>Password Generator</h1>
+                <label for="length">Password Length:</label>
+                <input class="dropbox" type="number" id="length" value="12" min="4" max="50"><br>
+                <label><input type="checkbox" id="include-uppercase" checked> Include Uppercase Letters</label><br>
+                <label><input type="checkbox" id="include-lowercase" checked> Include Lowercase Letters</label><br>
+                <label ><input type="checkbox" id="include-numbers" checked> Include Numbers</label><br>
+                <label><input type="checkbox" id="include-symbols" checked> Include Symbols</label><br>
+                <label><input type="checkbox" id="text-password"> Text Password</label><br>
+                <button id="generate-btn">Generate Password</button>
+                <div id="generated-password"></div>
+                <i class="fa-solid fa-maximize max" id="maxb2" onclick="scaleCardOverlay('card2')"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="hidden" id="contain3">
+        <div class="card rectangle" id="card3">
+            <div id="weather-app">
+                <h1>Get Weather Info</h1>
+                <input type="text" id="location-input" class="dropbox" placeholder="Enter a location...">
+                <button id="get-weather-btn">Get Weather</button>
+                <div id="weather-info"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hidden" id="contain4">
+        <div class="card rectangle" id="card4">
+            <h1>HTML Runner</h1>
+            <div class="editor-container">
+                <textarea id="editor" class="editor" placeholder="Write your HTML code here..."></textarea>
+                <button id="run-button" class="run-button">Run Code</button>
+                <iframe id="output" class="output"></iframe>
+            </div>
+            <script>
+                document.getElementById('run-button').addEventListener('click', function() {
+                    const code = document.getElementById('editor').value;
+                    const iframe = document.getElementById('output');
+                    iframe.srcdoc = code;
+                });
+            </script>
+            <i class="fa-solid fa-maximize max" id="maxb4" onclick="scaleCardOverlay('card4')"></i>
+        </div>
+    </div>
+
+    <div class="hidden" id="contain5">
+        <div class="card rectangle" id="card5">
+            <div id="finder-container">
+                <h1>Thoughts Finder</h1><br>
+                <label for="language">Select A Language:</label><br>
+                <select id="language" class="dropbox"><br>
+                    <option value="english">English</option>
+                    <option value="malayalam">sinhala</option>
+                </select><br>
+                <label><input type="checkbox" id="short-thoughts" checked=""> Short Thoughts</label><br>
+                <button id="get-thought-btn">Get Thought</button><br>
+                <div id="thought-display"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hidden" id="contain6">
+        <div class="card rectangle" id="card6">
+       <div class="container">
+    <h1>Anime Status Downloader</h1><br>
+   <video id="videoPlayer" controls></video><br><br>
+    <div class="btn-container">
+        <button onclick="playNext()">Next Video</button>
+    </div>
+</div>
+
+<script>
+// List of video URLs
+const videoUrls = [
+    "https://i.imgur.com/YiNG8jD.mp4",
+    "https://i.imgur.com/T0kOvSS.mp4",
+    "https://i.imgur.com/qChYWVI.mp4",
+    "https://i.imgur.com/5tHlDwV.mp4",
+    "https://i.imgur.com/nK9OGfc.mp4",
+    "https://i.imgur.com/2H0aqMM.mp4",
+    "https://i.imgur.com/pbsDrEu.mp4",
+    "https://i.imgur.com/oNlmftm.mp4",
+    "https://i.imgur.com/dI1dgtj.mp4",
+    "https://i.imgur.com/tHRDL3o.mp4",
+    "https://i.imgur.com/FpH6AFX.mp4",
+    "https://i.imgur.com/5OOiDHN.mp4",
+    "https://i.imgur.com/QIQCizM.mp4",
+    "https://i.imgur.com/BsOoxVi.mp4",
+    "https://i.imgur.com/AraV4Jf.mp4",
+    "https://i.imgur.com/jrjO2GS.mp4",
+    "https://i.imgur.com/EW5weSW.mp4",
+    "https://graph.org/file/505368d211d297e06879f.mp4",
+    "https://graph.org/file/a716814f296f70b4d340d.mp4",
+    "https://graph.org/file/a022c90c6611850ad073b.mp4",
+    "https://graph.org/file/4e18cadf03890ab8b7c64.mp4",
+    "https://graph.org/file/4d625d9efe20b92a88586.mp4",
+    "https://graph.org/file/f1a9c04ca8c60d63cb9be.mp4",
+    "https://graph.org/file/b2880d59bff372df2c52a.mp4",
+    "https://graph.org/file/bd734bf5aad3302270288.mp4",
+    "https://graph.org/file/0fc5b2a63a33a82c3490a.mp4",
+    "https://graph.org/file/fe34d785940727b308f06.mp4",
+    "https://graph.org/file/bb68f1e93de031c2134b2.mp4",
+    "https://graph.org/file/2d173f4c080e32cd2ba08.mp4"
+];
+
+// Select the video player element
+const videoPlayer = document.getElementById("videoPlayer");
+let currentVideoIndex = 0;
+
+// Load a random video on page load without autoplay
+window.onload = function() {
+    currentVideoIndex = Math.floor(Math.random() * videoUrls.length);
+    videoPlayer.src = videoUrls[currentVideoIndex];
+};
+
+// Play the next video when "Next Video" button is clicked
+function playNext() {
+    currentVideoIndex++;
+    if (currentVideoIndex >= videoUrls.length) {
+        currentVideoIndex = 0; // Loop back to the first video
+    }
+    playVideo(currentVideoIndex);
+}
+
+// Play video by index with error handling
+function playVideo(index) {
+    videoPlayer.src = videoUrls[index];
+    videoPlayer.play().catch(error => {
+        console.error("Error playing video:", error);
+    });
+}
+</script>
+</div>
+
+    <script src="tebox.js"></script>
+</body>
+</html>
