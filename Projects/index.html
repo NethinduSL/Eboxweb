@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>E Box</title>
+      <link rel="icon" href="https://raw.githubusercontent.com/NethinduSL/Ebox/refs/heads/main/Cards/logo3%3A4px.png" type="image/x-icon">
+   
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+     <link rel="stylesheet" href="/styles.css">
+ 
+   
+       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+     
+   
+   
+    </head>
+   <body>
+       
+         <div class="loader" id="loader"></div></div>
+      <!------------------------------------------------------------>
+      <div class="navbar">
+         <div class="nav-links">
+            <p style="font-size:20px">
+     <a href="/index.html"><i class="fa-solid fa-house"></i></a>
+        <a href="/Dashbord/index.html"><i class="fa-solid fa-layer-group"></i></a>
+                <a href="/Tools/index.html"><i class="fa-solid fa-screwdriver-wrench"></i></a>
+
+
+            <a href="#useful"><i class="fa-solid fa-bars"" onclick="toggleNav()" ></i></a></p>
+          </div>
+        <p style="font-size:30px;font-weight:bold;">E Boxᴰᴮ </p>
+           <h2 id="battery"></h2>
+         <button class="toggle-btn" id="themeToggle"><i class="fas fa-moon"></i></button>
+      
+         
+      </div>
+      
+      
+      <div id="sideNav" class="side-nav">
+      <h2>  <center><i class="fa-solid fa-fire"></i> </h2>
+        <a href="javascript:void(0)" class="close-btn" onclick="toggleNav()">×</a><br>
+        <h2><a href="/index.html"> <i class="fa-solid fa-house"></i>    Home</a></h2><br>
+       <h2 onclick="scaleCardOverlay('card1')"><i class="fa-solid fa-paperclip"></i>    About</h2><br>
+      <h2>  <a href="#"><i class="fa-solid fa-play"></i>   Services</a></h2><br>
+       <h2 onclick="scaleCardOverlay('card2')"><i class="fa-solid fa-phone"></i>   Contact</h2></center><br>
+    </div> 
+    
+    
+      <!------------------------------------------------------------>
+      <div class="hidden" id="contain">
+<div class="card2 small">
+
+<h1> My Projects</h1><br>
+<p>I do some project for fun like whatsapp bots,websites,and Robotics also there are some of my projects</p>
+</div>
+<div class="card rectangle">
+    
+                  <h2>Websites <i class="fa-solid fa-heart"></i></h2>
+                  <img src="" alt="Light Image" data-light="https://raw.githubusercontent.com/NethinduSL/Ebox/refs/heads/main/projects/Website.png" data-dark="https://raw.githubusercontent.com/NethinduSL/Ebox/refs/heads/main/projects/Website.png">
+                  <a href="https://nethindu-eboxs-projects.vercel.app/"><button>Nethindu <i class="fa-solid fa-link"></i></button></a>     
+                  <a href="www.Ebox.free.nf"><button>E Box<i class="fa-solid fa-link"></i></button></a>
+                  <p><br>Some of my websites</p>
+    
+    
+    
+    
+</div>
+
+<div class="card small">
+    
+    
+    
+    
+              <h2>Telegram Airdrops</h2>
+                  <img src="" alt="Light Image" data-light="https://raw.githubusercontent.com/NethinduSL/Ebox/refs/heads/main/Cards/progect/4.png" data-dark="https://raw.githubusercontent.com/NethinduSL/Ebox/refs/heads/main/Cards/progect/4.png">
+                  <a href="https://sites.google.com/view/eboxref/home"><button>Air drops<i class="fa-solid fa-link"></i></button></a>
+        
+</div>
+
+
+
+
+<div class="card rectangle">
+    
+    
+    
+    
+                  <h2>Elixa MD</h2>
+                  <img src="" alt="Light Image" data-light="https://raw.githubusercontent.com/NethinduSL/Ebox/refs/heads/main/projects/Whatsapp%20bot%20elixa.png" data-dark="https://raw.githubusercontent.com/NethinduSL/Ebox/refs/heads/main/projects/Whatsapp%20bot%20elixa.png">
+                  <a href="https://github.com/Eboxsl/Elixa_MD"><button>Elixa <i class="fa-solid fa-link"></i></button></a> 
+                  <p><br>Some of my Bots</p>
+    
+</div>
+
+<div class="card rectangle">
+    
+    
+    
+    
+                  <h2>Elite MD</h2>
+                  <img src="" alt="Light Image" data-light="https://raw.githubusercontent.com/NethinduSL/Ebox/refs/heads/main/projects/Whatsapp%20bot%20elite.png" data-dark="https://raw.githubusercontent.com/NethinduSL/Ebox/refs/heads/main/projects/Whatsapp%20bot%20elite.png">
+                  <a href="https://github.com/Bit-X-TM/ELITE-MD"><button>Elite<i class="fa-solid fa-link"></i></button></a>
+                  <p><br>Some of my Bots</p>
+    
+</div>
+
+
+
+<div class="card rectangle">
+    
+                  <h2>Terminal</h2>
+                  <img src="" alt="Light Image" data-light="https://raw.githubusercontent.com/NethinduSL/Ebox/refs/heads/main/projects/Terminal.png" data-dark="https://raw.githubusercontent.com/NethinduSL/Ebox/refs/heads/main/projects/Terminal.png">
+                  <a href="https://terminal-123.vercel.app/"><button>Terminal<i class="fa-solid fa-link"></i></button></a>
+    
+    
+    
+</div>
+
+
+<div class="card rectangle">
+    
+                  <h2>Terminal</h2>
+                  <img src="" alt="Light Image" data-light="https://raw.githubusercontent.com/NethinduSL/Ebox/refs/heads/main/projects/Useful.png" data-dark="https://raw.githubusercontent.com/NethinduSL/Ebox/refs/heads/main/projects/Useful.png">
+                  <a href="https://useful-git-main-eboxs-projects.vercel.app/"><button>useful<i class="fa-solid fa-link"></i></button></a>
+    
+    
+    
+</div>
+
+
+<div class="card rectangle">
+    
+                  <h2>Terminal</h2>
+                  <img src="" alt="Light Image" data-light="https://raw.githubusercontent.com/NethinduSL/Ebox/refs/heads/main/projects/Telegram%20bot.png" data-dark="https://raw.githubusercontent.com/NethinduSL/Ebox/refs/heads/main/projects/Telegram%20bot.png">
+                  <a href="https://t.me/Bitxsl_bot"><button>Bitx Bot<i class="fa-solid fa-link"></i></button></a>
+    
+    
+    
+</div>
+
+
+
+    </div>
+    
+    </div>
+      
+      
+      
+      
+      
+   </body>
+   <script src="pebox.js"></script>
+</html>
