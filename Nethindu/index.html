@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>E Box</title>
+      <link rel="icon" href="https://raw.githubusercontent.com/NethinduSL/Ebox/refs/heads/main/Cards/logo3%3A4px.png" type="image/x-icon">
+   
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+     <link rel="stylesheet" href="/styles.css">
+ 
+   
+     <style> *,
+        *::after,
+        *::before {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --x: 0px;
+            --y: 0px;
+        }
+
+
+
+        section {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cards-container {
+            position: relative;
+            width: 100%;
+        }
+
+
+
+        .single-card-wrapper>a {
+            display: block;
+            height: 100%;
+            width: 100%;
+            color: #fff;
+            font-weight: 500;
+            -webkit-text-decoration:
+                underline solid #5e6077 1px;
+            text-decoration: underline solid #5e6077 1px;
+            transition: color 0.2s cubic-bezier(0.45, 0, 0.55, 1);
+            text-underline-offset: 3px;
+        }
+
+
+        .single-card-wrapper>a:hover {
+            color: #ececfb;
+        }
+
+
+        .card-hover-container {
+            border: 0.5px solid #ffffff1e;
+            width: 100%;
+            border-radius: 26px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            min-height: 399px;
+            aspect-ratio: 1;
+        }
+
+        .card-gradient {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            background: radial-gradient(#171825 40%, #63e 50%, #8e64ff, #f92672);
+            mix-blend-mode: darken;
+            pointer-events: none;
+            z-index: 3;
+        }
+
+        .card-hover-container>img {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 4;
+        }
+
+        .card-bg-characters {
+            --x: 0px;
+            --y: 0px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            word-wrap: break-word;
+            font-size: 14px;
+            overflow: hidden;
+            font-family: monospace;
+            line-height: 1.15;
+            color: #fff;
+            opacity: 0;
+            transition: 0.5s;
+            -webkit-mask-image: radial-gradient(300px circle at var(--x) var(--y),
+                    #000 20%,
+                    rgba(0, 0, 0, 0.25),
+                    transparent);
+            mask-image: radial-gradient(300px circle at var(--x) var(--y),
+                    #000 20%,
+                    rgba(0, 0, 0, 0.25),
+                    transparent);
+            transform: scale(1.025);
+        }
+
+        .card-hover-container:hover .card-bg-characters {
+            opacity: 1;
+        }
+
+
+        /* -- External Social Link CSS Styles -- */
+
+        #source-link {
+            top: 120px;
+        }
+
+        #source-link>i {
+            color: rgb(94, 106, 210);
+        }
+
+        #yt-link {
+            top: 65px;
+        }
+
+        #yt-link>i {
+            color: rgb(219, 31, 106);
+
+        }
+
+        #Fund-link {
+            top: 10px;
+        }
+
+        #Fund-link>i {
+            color: rgb(255, 251, 0);
+
+        }
+
+        .meta-link {
+            align-items: center;
+            backdrop-filter: blur(3px);
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            display: inline-flex;
+            gap: 5px;
+            left: 10px;
+            padding: 10px 20px;
+            position: fixed;
+            text-decoration: none;
+            transition: background-color 600ms, border-color 600ms;
+            z-index: 10000;
+        }
+
+        .meta-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .meta-link>i,
+        .meta-link>span {
+            height: 20px;
+            line-height: 20px;
+        }
+
+        .meta-link>span {
+            color: white;
+            font-family: "Rubik", sans-serif;
+            transition: color 600ms;
+        }</style>
+   
+   
+    </head>
+   <body>
+       
+         <div class="loader" id="loader"></div>
+      <!------------------------------------------------------------>
+      <div class="navbar">
+         <div class="nav-links">
+            <p style="font-size:20px">
+     <a href="Dashbord/index.html"><i class="fa-solid fa-layer-group"></i></a>
+   <a href="Projects/index.html">  <i class="fa-solid fa-file"></i></a>
+        <a href="Tools/index.html"><i class="fa-solid fa-screwdriver-wrench"></i></a>
+
+            <a href="#useful"><i class="fa-solid fa-bars"" onclick="toggleNav()" ></i></a></p>
+          </div>
+        <p style="font-size:30px;font-weight:bold;">E Boxᴰᴮ </p>
+           <h2 id="battery"></h2>
+         <button class="toggle-btn" id="themeToggle"><i class="fas fa-moon"></i></button>
+      
+         
+      </div>
+      
+      
+      <div id="sideNav" class="side-nav">
+      <h2>  <center><i class="fa-solid fa-fire"></i> </h2>
+        <a href="javascript:void(0)" class="close-btn" onclick="toggleNav()">×</a><br>
+        <h2><a href="/index.html"> <i class="fa-solid fa-house"></i>    Home</a></h2><br>
+       <h2 onclick="scaleCardOverlay('card1')"><i class="fa-solid fa-paperclip"></i>    About</h2><br>
+      <h2>  <a href="#"><i class="fa-solid fa-play"></i>   Services</a></h2><br>
+       <h2 onclick="scaleCardOverlay('card2')"><i class="fa-solid fa-phone"></i>   Contact</h2></center><br>
+    </div> 
+    
+    <ul></ul>
+      <!------------------------------------------------------------>
+      <div class="hidden" id="contain">
+          <div class="card rectangle ">    
+   <center>   <iframe style="border-radius:10px" width="90%" height="800px" src="https://terminal-123.vercel.app/" title="Embedded Terminal"></iframe></center>
+        </div>
+ 
+ </div>
+
+
+</div>
+        
+<div class="hidden" id="contain2">
+    <div class="card rectangle">
+        <h1>♥️ I Love You Developer</h1>
+        
+        
+        
+        
+    </div>
+    
+    
+    
+</div>
+
+
+
+            <div class="hidden" style="background: #000; border-radius:10px;" id="contain3">
+                <div class="cards-container">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="single-card-wrapper">
+                                <a href="#">
+                                    <div class="card-hover-container">
+                                        <img src="https://www.yudiz.com/codepen/code-hover//github-mark-white.svg"
+                                            alt="">
+                                        <div class="card-gradient"></div>
+                                        <div class="card-bg-characters">
+
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="single-card-wrapper">
+                                <a href="#">
+                                    <div class="card-hover-container 51">
+                                        <img src="https://www.yudiz.com/codepen/code-hover//code.svg" alt="">
+                                        <div class="card-gradient"></div>
+                                        <div class="card-bg-characters">
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="single-card-wrapper">
+                                <a href="#">
+                                    <div class="card-hover-container 51">
+                                        <img src="https://www.yudiz.com/codepen/code-hover//die.svg" alt="">
+                                        <div class="card-gradient"></div>
+                                        <div class="card-bg-characters">
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+        <script>
+            const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            const randomCharacter = () =>
+                chars[Math.floor(Math.random() * (chars.length - 1))],
+                randomString = (length) =>
+                    Array.from(Array(length)).map(randomCharacter).join("");
+
+            const cardHover = (card, letters, e) => {
+                const rect = card[0].getBoundingClientRect(),
+                    x = e.clientX - rect.left,
+                    y = e.clientY - rect.top;
+
+                letters[0].style.setProperty("--x", `${x}px`);
+                letters[0].style.setProperty("--y", `${y}px`);
+
+                letters[0].innerText = randomString(2000);
+            };
+
+            const card = $(".card-hover-container");
+            card.each(function () {
+                $(this).on("mousemove", (e) =>
+                    cardHover($(this), $(this).children(".card-bg-characters"), e)
+                );
+                $(this).on("touchmove", (e) =>
+                    cardHover($(this), $(this).children(".card-bg-characters"), e)
+                );
+            });
+
+        </script>
+
+
+
+   </body>
+   <script src="/ebox.js"></script>
+    
+</html>
